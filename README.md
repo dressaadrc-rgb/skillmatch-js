@@ -115,18 +115,19 @@ skillmatch-js/
 
 ## Versionamento — Git e GitHub
 
-O projeto foi feito em branches, sem commits diretos na `main`, seguindo um GitFlow simplificado:
+O repositório foi criado direto pelo site do GitHub. A estrutura inicial do projeto
+(README.md e skillmatch.js) foi adicionada com upload direto na branch main. As
+atualizações seguintes foram feitas em branches separadas e integradas à main por
+Pull Request, seguindo um GitFlow simplificado; pequenos ajustes pontuais (como a
+correção da estrutura de pastas) foram commitados diretamente na main:
 
-| Branch | Objetivo |
-|---|---|
-| `feature/perfil-candidato` | Criar o objeto do perfil da candidata (RF01) |
-| `feature/modelo-vagas` | Criar as classes `Vaga`/`VagaComBeneficios` e a lista de vagas (RF02, RF09, RF10, RF11) |
-| `feature/logica-compatibilidade` | Cálculo, classificação, habilidades faltantes, melhor vaga e recomendação (RF03–RF07) |
-| `feature/assincronismo` | Closure, callback e simulação de servidor com Promise (RF12, RF13, RF14) |
-| `feature/execucao-principal` | Fluxo principal com async/await e impressão do relatório |
-| `docs/readme-kanban` | Documentação (README) e quadro Kanban |
+| Branch              | Objetivo                                                          |
+|-----------------------|--------------------------------------------------------------------|
+| docs/atualizacoes     | Atualizar o README (ex: adicionar link do quadro Trello)            |
+| docs/planejamento     | Adicionar os arquivos de planejamento (kanban e template do Trello) |
 
-Cada branch foi integrada à `main` por merge após a conclusão da tarefa correspondente.
+Cada branch foi integrada à main por Pull Request (merge) após a conclusão da
+tarefa correspondente.
 
 ## Vídeo de apresentação
 
