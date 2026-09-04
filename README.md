@@ -132,6 +132,4 @@ Cada branch foi integrada à `main` por merge após a conclusão da tarefa corre
 
 🔗 *(adicionar aqui o link do vídeo, hospedado no Google Drive com permissão de visualização para qualquer pessoa com o link, ou como não listado no YouTube)*
 
-## Sobre o uso de Inteligência Artificial
-
-Usei o Claude (Anthropic) como apoio para estruturar o projeto, organizar os arquivos e escrever a primeira versão do código e deste README, a partir do meu perfil real e das minhas decisões de projeto (regra de cálculo, critério de recomendação, nomes de vagas). Revisei o código linha a linha para garantir que uso apenas conceitos vistos até a Semana 06 e para conseguir explicar cada parte com segurança no vídeo de apresentação, como pede o enunciado do mini-projeto.
+Link Trello  https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec
