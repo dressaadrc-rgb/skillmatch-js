@@ -1,6 +1,6 @@
 # Quadro Kanban — SkillMatch JS
 
-Este arquivo documenta o planejamento das tarefas do mini-projeto. Recomendo espelhar este mesmo quadro em uma ferramenta visual (GitHub Projects, Trello ou Notion) e movimentar os cartões nela ao longo do desenvolvimento — assim fica mais fácil mostrar a movimentação real no vídeo de apresentação. Link do quadro visual: https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec.
+Link do quadro visual: https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec.
 
 ## Backlog
 
