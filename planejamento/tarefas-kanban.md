@@ -26,7 +26,7 @@ Este arquivo documenta o planejamento das tarefas do mini-projeto, espelhando o 
 - [x] Criar objeto do perfil da candidata (RF01)
 - [x] Criar classe `Vaga` com construtor, atributos e métodos (RF09, RF11)
 - [x] Criar classe `VagaComBeneficios` com herança de `Vaga` (RF10)
-- [x] Criar lista de 3 vagas fictícias (RF02)
+- [x] Criar lista de vagas fictícias cobrindo Alta, Média e Baixa compatibilidade (RF02)
 - [x] Implementar cálculo de compatibilidade com `filter` (RF03, RF08)
 - [x] Implementar classificação com `if/else` (RF04)
 - [x] Implementar listagem de habilidades faltantes com `filter` (RF05, RF08)
