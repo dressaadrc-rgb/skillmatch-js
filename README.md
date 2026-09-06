@@ -116,3 +116,6 @@ Vídeo de apresentação
 🔗 (adicionar aqui o link do vídeo, hospedado no Google Drive com permissão de visualização para qualquer pessoa com o link, ou como não listado no YouTube)
 
 Link Trello  https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec
+
+Uso de IA
+Eu utilizei inteligência artificial (Claude) durante o desenvolvimento como ferramenta de apoio para tirar dúvidas e revisar alguns conceitos de JavaScript. Principalmente em partes como Promise, async/await, closure e herança. Depois eu adaptei o código para o que foi pedido na atividade, testei no VS Code e revisei o funcionamento das partes
