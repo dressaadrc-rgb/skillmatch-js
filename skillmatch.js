@@ -98,7 +98,7 @@ const vagas = [
   ),
   new Vaga(
     "CodeWave",
-    "Desenvolvedora Front-End Pleno",
+    "Desenvolvedora Front-End Júnior",
     ["HTML", "CSS", "JavaScript", "React", "Redux", "TypeScript", "Testes automatizados"],
     "Remoto"
   ),
