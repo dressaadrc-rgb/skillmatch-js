@@ -1,121 +1,160 @@
-SkillMatch JS
+# SkillMatch JS
 
-Simulador de compatibilidade entre um perfil de candidata e vagas de front-end júnior.
+## Sobre o projeto
 
-Mini-Projeto Avaliativo — Módulo 01, Semana 06 — Curso de Programação Front-End React — SCTEC, Turma 04 Autora: Andressa da Rosa Costa
+O **SkillMatch JS** é um simulador que compara o perfil de uma pessoa candidata com algumas vagas de Front-End Júnior.
 
-Este projeto foi desenvolvido em JavaScript puro, sem uso de React, HTML, CSS ou DOM, como forma de encerrar e consolidar tudo o que foi estudado no Módulo 01 do curso — lógica de programação, tipos de dados, condicionais, laços, funções, arrays, objetos, classes, herança, closures, callbacks, Promises e async/await — antes de avançarmos para a construção de interfaces com React nos próximos módulos.
+A ideia do projeto é verificar o quanto o candidato combina com cada vaga, mostrando a porcentagem de compatibilidade, as habilidades que estão faltando e qual vaga teve o melhor resultado.
 
-O que o sistema faz
+O projeto foi feito somente com **JavaScript**, sem React, HTML, CSS ou DOM.
 
-O skillmatch.js compara as habilidades da candidata (eu, Andressa) com os requisitos de 4 vagas fictícias de front-end júnior e, para cada vaga, calcula:
+**Curso:** Análise e Desenvolvimento de Sistemas
+**Módulo:** 01
+**Autora:** Andressa da Rosa Costa
 
-o percentual de compatibilidade (0 a 100%);
-a classificação (Alta, Média ou Baixa compatibilidade);
-as habilidades que ainda faltam para atender aquela vaga;
-se a candidata atende a todos os requisitos ou não.
+---
 
-No final, o sistema aponta a vaga com maior compatibilidade e gera uma recomendação de qual habilidade estudar primeiro.
+## O que o sistema faz
 
-O carregamento das vagas é simulado como se viesse de um servidor (com atraso e tratamento de erro), para reforçar o conceito de arquitetura cliente-servidor mesmo sem uma API real.
+* Cadastra o perfil do candidato;
+* Possui 4 vagas fictícias;
+* Compara as habilidades do candidato com os requisitos das vagas;
+* Calcula a porcentagem de compatibilidade;
+* Classifica o resultado como alta, média ou baixa;
+* Mostra as habilidades que estão faltando;
+* Encontra a vaga com maior compatibilidade;
+* Indica uma habilidade para estudar;
+* Simula o carregamento das vagas de um servidor.
 
-Como executar
+---
 
-Não é preciso instalar nada além de ter o Node.js instalado. Existem três formas de rodar:
+## Como executar
 
-Opção 1 — Node.js (recomendado)
+O projeto pode ser executado pelo Node.js.
 
-bash
-git clone <link-do-repositorio>
-cd skillmatch-js
+No terminal do VS Code:
+
+```bash
 node skillmatch.js
+```
 
-Opção 2 — Console do navegador
+Também é possível executar o código pelo console do navegador ou por algum site que permita rodar JavaScript.
 
-Abra o DevTools do navegador (F12), cole todo o conteúdo do arquivo skillmatch.js na aba "Console" e pressione Enter.
+---
 
-Opção 3 — Ambiente online
+## Regra de compatibilidade
 
-Cole o código em um ambiente online de JavaScript (ex: replit.com, jsfiddle.net na aba de console) e execute.
+Para calcular a compatibilidade, comparei a quantidade de requisitos que o candidato possui com o total de requisitos da vaga.
 
-O relatório completo é impresso no console.
+A fórmula utilizada foi:
 
-Regra de cálculo da compatibilidade (RF03)
-percentual = (nº de requisitos da vaga que a candidata possui / nº total de requisitos da vaga) × 100
+```text
+(quantidade de requisitos atendidos / quantidade total de requisitos) × 100
+```
 
-O resultado é arredondado com Math.round(). Escolhi essa regra porque é simples, justa e fácil de explicar: cada requisito da vaga "vale o mesmo", e a nota reflete exatamente qual fração dos requisitos é atendida. Essa mesma regra é aplicada a todas as vagas, sem exceção (método calcularCompatibilidade da classe Vaga).
+Escolhi essa regra porque é uma forma simples de mostrar o quanto o candidato atende aos requisitos de cada vaga.
 
-A classificação segue a tabela do enunciado:
+### Classificação
 
-Percentual	Classificação
-80% a 100%	Alta compatibilidade
-50% a 79%	Média compatibilidade
-0% a 49%	Baixa compatibilidade
-Critério de recomendação de estudo (RF07)
+| Porcentagem | Resultado |
+| ----------- | --------- |
+| 80% a 100%  | Alta      |
+| 50% a 79%   | Média     |
+| 0% a 49%    | Baixa     |
 
-A função gerarRecomendacaoDeEstudo conta, entre todas as vagas analisadas, quantas vezes cada habilidade faltante se repete. A habilidade que aparece em mais vagas ao mesmo tempo é priorizada, porque estudá-la é o que mais aumenta a compatibilidade geral da candidata com o conjunto de vagas — e não apenas com uma vaga isolada.
+---
 
-Conceitos do Módulo 01 aplicados e onde estão no código
-Conceito	Onde está no skillmatch.js
-Objetos, chaves e valores	candidato, cada Vaga
-Arrays	candidato.habilidades, vaga.requisitos, vagas
-Tipos de dados (string, number, array, boolean)	em todo o arquivo (ex: percentual é number, atendeTodosRequisitos é boolean)
-let e const	usados em todo o projeto (ver seção sobre var abaixo)
-Operadores lógicos e matemáticos	!habilidadesCandidato.includes(...), Math.round(...), comparações >=
-if / else	classificarCompatibilidade
-Operador ternário	escolha do emoji e da mensagem de faltantes em iniciarSkillMatch
-Laço for	impressão de cada análise em iniciarSkillMatch
-Funções e arrow functions	funções nomeadas (ex: classificarCompatibilidade, iniciarSkillMatch) usam function; as funções passadas para os métodos de array (filter, map, every, find, reduce, sort) e para a Promise/setTimeout usam arrow functions (=>)
-Métodos de array (map, filter, every, find, reduce)	filter em calcularCompatibilidade/habilidadesFaltantes, map em processarVagas, every em analisarVaga, find em iniciarSkillMatch, reduce em encontrarMelhorVaga
-Classe e construtor	class Vaga { constructor(...) {...} }
-Herança	class VagaComBeneficios extends Vaga
-Uso do this	dentro dos métodos da classe Vaga (ex: this.requisitos)
-Callback	analisarVaga é passada como argumento para processarVagas
-Closure	criarContadorDeAnalises() mantém contador vivo entre chamadas sem variável global
-Promise	buscarVagasDoServidor
-Async/await	iniciarSkillMatch, com try/catch tratando o erro simulado
-Sobre var, let e const
+## Recomendação de estudo
 
-O projeto usa apenas let e const. Não usei var porque var tem escopo de função (não de bloco), pode ser redeclarada sem erro e sofre "hoisting" de um jeito que facilita bugs difíceis de rastrear — por exemplo, uma variável var dentro de um for "vaza" para fora do laço. let e const têm escopo de bloco, o que deixa o código mais previsível. Uso const como padrão (para tudo que não é reatribuído) e let só quando o valor realmente precisa mudar (como o contador dentro da closure e a variável i do laço for).
+Para indicar o que estudar, o programa verifica as habilidades que estão faltando nas vagas.
 
-Como a internet funciona (resumo)
+A habilidade que aparece mais vezes entre os requisitos que ainda não possuo é considerada a prioridade de estudo.
 
-Quando um site ou aplicação pede dados, o navegador (cliente) envia uma requisição para um servidor através da internet. O servidor processa o pedido, busca ou calcula a informação, e devolve uma resposta pela mesma rede. Esse processo tem latência (não é instantâneo) e pode falhar (rede fora do ar, servidor indisponível), por isso o código que faz essas chamadas deve lidar com espera e com erro.
+---
 
-Arquitetura cliente-servidor no projeto
+## Conceitos utilizados
 
-Como o projeto é só JavaScript puro (sem back-end real), simulei essa arquitetura com a função buscarVagasDoServidor: ela devolve uma Promise que só resolve depois de um setTimeout (representando a latência de uma chamada de rede) e pode rejeitar com um erro (representando uma falha do servidor). A função iniciarSkillMatch é o "cliente": ela usa await para esperar a resposta e try/catch para tratar uma eventual falha, exatamente como aconteceria numa chamada real a uma API.
+Durante o projeto foram utilizados os conteúdos estudados no módulo, como:
 
-Estrutura do projeto
+* Variáveis com `let` e `const`;
+* Tipos de dados;
+* Operadores;
+* `if/else`;
+* Operador ternário;
+* Laços de repetição;
+* Funções;
+* Arrow functions;
+* Arrays e objetos;
+* `map()`;
+* `filter()`;
+* `find()`;
+* `every()`;
+* `reduce()`;
+* Classes;
+* Constructor;
+* Herança;
+* `this`;
+* Callback;
+* Closure;
+* Promise;
+* `async/await`.
+
+---
+
+## Promise e simulação de servidor
+
+O projeto possui uma função que simula o carregamento das vagas de um servidor.
+
+Foi utilizado `Promise` com um pequeno atraso para representar esse carregamento.
+
+Também foi utilizado `async/await` e `try/catch` para tratar o resultado.
+
+---
+
+## Como a internet funciona
+
+De forma simples, quando acessamos um site ou sistema, o computador ou celular faz uma solicitação para um servidor. O servidor processa essa solicitação e envia uma resposta.
+
+No projeto, essa ideia foi apenas simulada, já que não foi utilizada uma API ou servidor real.
+
+---
+
+## Git e GitHub
+
+O projeto foi desenvolvido utilizando Git e GitHub para acompanhar as alterações.
+
+Também utilizei branches para organizar as partes do desenvolvimento e o Trello para organizar as tarefas.
+
+**Trello:** [
+](https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec)
+---
+
+## Estrutura do projeto
+
+```text
 skillmatch-js/
-├── README.md
+│
 ├── skillmatch.js
-└── planejamento/
-    └── tarefas-kanban.md
-VS Code e extensões usadas
-Prettier - Code formatter: formatação automática e consistente do código.
-ESLint: aponta erros e más práticas de JavaScript direto no editor.
-GitLens: facilita visualizar o histórico de commits e branches.
-Live Server (opcional): útil caso o código seja testado junto de um index.html.
-Versionamento — Git e GitHub
+├── README.md
+│
+└── planning/
+    └── tasks-kanban.md
+```
 
-O projeto foi feito em branches, sem commits diretos na main, seguindo um GitFlow simplificado:
+---
 
-Branch	Objetivo
-feature/perfil-candidato	Criar o objeto do perfil da candidata (RF01)
-feature/modelo-vagas	Criar as classes Vaga/VagaComBeneficios e a lista de vagas (RF02, RF09, RF10, RF11)
-feature/logica-compatibilidade	Cálculo, classificação, habilidades faltantes, melhor vaga e recomendação (RF03–RF07)
-feature/assincronismo	Closure, callback e simulação de servidor com Promise (RF12, RF13, RF14)
-feature/execucao-principal	Fluxo principal com async/await e impressão do relatório
-docs/readme-kanban	Documentação (README) e quadro Kanban
+## Vídeo
 
-Cada branch foi integrada à main por merge após a conclusão da tarefa correspondente.
+No vídeo será apresentada a execução do projeto e explicadas as principais partes do código.
 
-Vídeo de apresentação
+**Link do vídeo:** inserir link
 
-🔗 (adicionar aqui o link do vídeo, hospedado no Google Drive com permissão de visualização para qualquer pessoa com o link, ou como não listado no YouTube)
+---
 
-Link Trello  https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec
+## Uso de Inteligência Artificial
 
-Uso de IA
-Eu utilizei inteligência artificial (Claude) durante o desenvolvimento como ferramenta de apoio para tirar dúvidas e revisar alguns conceitos de JavaScript. Principalmente em partes como Promise, async/await, closure e herança. Depois eu adaptei o código para o que foi pedido na atividade, testei no VS Code e revisei o funcionamento das partes
+Utilizei inteligência artificial (**Claude**) durante o desenvolvimento como apoio para tirar algumas dúvidas e revisar conceitos de JavaScript.
+
+Usei principalmente para tirar dúvidas sobre **Promise, async/await, closure e herança**.
+
+Depois adaptei o código para a atividade, testei no VS Code e revisei o funcionamento das partes utilizadas.
