@@ -126,7 +126,7 @@ O projeto foi desenvolvido utilizando Git e GitHub para acompanhar as alteraçõ
 Também utilizei branches para organizar as partes do desenvolvimento e o Trello para organizar as tarefas.
 
 **Trello:** [
-](https://trello.com/invite/b/6a9b4240cb7feb7469f33470/ATTI2577646f1d56a069e403f75abd6b8f536361D2CB/skilmatch-js-mini-projeto-sctec)
+](https://trello.com/b/Eepjy1ax/skilmatch-js-mini-projeto-sctec)
 ---
 
 ## Estrutura do projeto
